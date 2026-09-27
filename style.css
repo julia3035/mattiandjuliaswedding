@@ -144,6 +144,38 @@ a { color: inherit; }
 }
 
 /* =========================================================
+   Language switcher (used in gate + nav)
+   ========================================================= */
+.lang-btn {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--cream-dim);
+  background: none;
+  border: 1px solid var(--forest-line);
+  border-radius: 3px;
+  padding: 0.25rem 0.6rem;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.lang-btn:hover,
+.lang-btn:focus-visible { color: var(--gold-soft); border-color: var(--gold-soft); }
+
+.lang-btn.is-active {
+  color: var(--forest-dark);
+  background: var(--gold);
+  border-color: var(--gold);
+}
+
+.gate-lang-switch {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+/* =========================================================
    Nav
    ========================================================= */
 .nav {
@@ -174,12 +206,23 @@ a { color: inherit; }
   letter-spacing: 0.03em;
 }
 
+.nav-inner nav {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
 .nav-links {
   list-style: none;
   display: flex;
   gap: 1.75rem;
   margin: 0;
   padding: 0;
+}
+
+.nav-lang-switch {
+  display: flex;
+  gap: 0.4rem;
 }
 
 .nav-links a {
@@ -215,6 +258,12 @@ a { color: inherit; }
 @media (max-width: 700px) {
   .nav-toggle { display: flex; }
 
+  .nav-inner nav {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+  }
+
   .nav-links {
     position: absolute;
     top: var(--nav-height);
@@ -233,6 +282,11 @@ a { color: inherit; }
 
   .nav-links li { border-top: 1px solid var(--forest-line); }
   .nav-links a { display: block; padding: 0.85rem 1.25rem; }
+
+  .nav-lang-switch {
+    justify-content: center;
+    padding: 0.75rem 0;
+  }
 }
 
 /* =========================================================
