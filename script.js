@@ -5,7 +5,7 @@
 // wedding guests, not real security. Don't put anything truly
 // sensitive (like addresses of guests) behind it.
 // ============================================================
-const PASSWORD = "changeme"; // <-- change this before you publish!
+const PASSWORD = "langenburg"; // 
 const SESSION_KEY = "wedding-site-unlocked";
 
 const gate = document.getElementById("gate");
