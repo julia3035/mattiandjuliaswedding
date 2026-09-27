@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NAMES — Our Wedding</title>
+<title>Julia & Matt — Our Wedding</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -16,14 +16,22 @@
 <div id="gate" class="gate">
   <div class="gate-card">
     <p class="gate-leaf" aria-hidden="true">&#10058;</p>
-    <h1 class="gate-title">NAMES</h1>
-    <p class="gate-sub">This little corner of the woods is just for our guests.</p>
+    <h1 class="gate-title">Julia & Matt</h1>
+    <p class="gate-sub" data-lang="en">This little corner of the woods is just for our guests ♥</p>
+    <p class="gate-sub" data-lang="de">Diese kleine Seite ist nur für unsere Gäste ♥</p>
     <form id="gate-form" class="gate-form">
-      <label for="gate-password" class="gate-label">Enter the password from your invitation</label>
+      <label for="gate-password" class="gate-label" data-lang="en">Enter the password from your invitation</label>
+      <label for="gate-password" class="gate-label" data-lang="de">Gib das Passwort von deiner Einladung ein</label>
       <input type="text" id="gate-password" class="gate-input" autocomplete="off" required>
-      <button type="submit" class="gate-button">Enter</button>
-      <p id="gate-error" class="gate-error" hidden>That's not quite it — try again.</p>
+      <button type="submit" class="gate-button" data-lang="en">Enter</button>
+      <button type="submit" class="gate-button" data-lang="de">Hier entlang</button>
+      <p class="gate-error" data-lang="en" hidden>You misspelled it hihi.</p>
+      <p class="gate-error" data-lang="de" hidden>Du hast dich vertippt hihi.</p>
     </form>
+    <div class="gate-lang-switch">
+      <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+      <button type="button" class="lang-btn" data-lang-btn="de">DE</button>
+    </div>
   </div>
 </div>
 
@@ -34,184 +42,226 @@
   <header class="nav" id="top">
     <div class="nav-inner">
       <a href="#top" class="nav-brand">NAMES</a>
-      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
       <nav>
         <ul class="nav-links" id="nav-links">
-          <li><a href="#story">Our Story</a></li>
-          <li><a href="#timeline">Timeline</a></li>
-          <li><a href="#details">Details</a></li>
-          <li><a href="#travel">Travel &amp; Stay</a></li>
-          <li><a href="#registry">Registry</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#timeline" data-lang="en">Timeline</a><a href="#timeline" data-lang="de">Ablauf</a></li>
+          <li><a href="#details" data-lang="en">Details</a><a href="#details" data-lang="de">Details</a></li>
+          <li><a href="#travel" data-lang="en">Travel &amp; Stay</a><a href="#travel" data-lang="de">Anreise &amp; Unterkunft</a></li>
+          <li><a href="#registry" data-lang="en">Registry</a><a href="#registry" data-lang="de">Geschenke</a></li>
+          <li><a href="#faq" data-lang="en">FAQ</a><a href="#faq" data-lang="de">FAQ</a></li>
         </ul>
+        <div class="nav-lang-switch">
+          <button type="button" class="lang-btn" data-lang-btn="en">EN</button>
+          <button type="button" class="lang-btn" data-lang-btn="de">DE</button>
+        </div>
       </nav>
     </div>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <p class="hero-eyebrow">&#10058; We're getting married &#10058;</p>
+    <p class="hero-eyebrow" data-lang="en">&#10058; We're getting married &#10058;</p>
+    <p class="hero-eyebrow" data-lang="de">&#10058; Wir heiraten &#10058;</p>
     <h1 class="hero-names">NAMES</h1>
-    <p class="hero-date">Month Day, Year &nbsp;&middot;&nbsp; City, State</p>
+    <p class="hero-date" data-lang="en">September 18th, 2027 &nbsp;&middot;&nbsp; Langenburg</p>
+    <p class="hero-date" data-lang="de">18. September 2027 &nbsp;&middot;&nbsp; Langenburg</p>
     <div class="divider" aria-hidden="true">
       <svg viewBox="0 0 200 40" class="divider-leaf">
         <path d="M100 20 C 80 5, 40 5, 20 20 C 40 35, 80 35, 100 20 C 120 5, 160 5, 180 20 C 160 35, 120 35, 100 20 Z" fill="none" stroke="currentColor" stroke-width="1.4"/>
         <circle cx="100" cy="20" r="3" fill="currentColor"/>
       </svg>
     </div>
-    <p class="hero-desc">
-      We can't wait to celebrate our forever with the people we love most, tucked away
-      among the trees for a weekend of good food, good company, and (hopefully) good weather.
-      Everything you need to know is right here — scroll on down.
+    <p class="hero-desc" data-lang="en">
+      We can't wait to celebrate our forever with the people we love most. We are looking forward to a weekend of good food, good company, and (hopefully) good weather.
+      Everything you need to know is right here, scroll on down.
     </p>
-  </section>
-
-  <!-- OUR STORY -->
-  <section id="story" class="section">
-    <h2 class="section-title">Our Story</h2>
-    <div class="section-rule" aria-hidden="true"></div>
-    <p class="section-text">
-      TEXT — a few short paragraphs about how you met, the proposal, or whatever you'd like
-      your guests to know. Keep it warm and brief; this isn't the place for the whole novel.
+    <p class="hero-desc" data-lang="de">
+      Wir können es kaum erwarten, mit den Menschen zu feiern, die wir am meisten lieben. Wir freuen uns
+     auf ein Wochenende voller gutem Essen, guter Gesellschaft und
+      (hoffentlich) gutem Wetter. Alles Wichtige findet ihr hier, einfach runterscrollen.
     </p>
   </section>
 
   <!-- TIMELINE -->
   <section id="timeline" class="section">
-    <h2 class="section-title">Wedding Day Timeline</h2>
+    <h2 class="section-title" data-lang="en">Wedding Day Timeline</h2>
+    <h2 class="section-title" data-lang="de">Ablauf des Tages</h2>
     <div class="section-rule" aria-hidden="true"></div>
     <ol class="timeline">
       <li class="timeline-item">
         <span class="timeline-dot" aria-hidden="true"></span>
         <div class="timeline-content">
-          <p class="timeline-time">3:00 PM</p>
-          <h3 class="timeline-label">Guests Arrive</h3>
-          <p class="timeline-text">TEXT — where to park, where to check in, any last notes.</p>
+          <p class="timeline-time">12 PM</p>
+          <h3 class="timeline-label" data-lang="en">Guests Arrive</h3>
+          <h3 class="timeline-label" data-lang="de">Ankunft der Gäste</h3>
+          <p class="timeline-text" data-lang="en">There is parking right infront of the venue however it is very limited and we would recommend you leave the car at the hotel.
+All hotels that we recommend further down are around 5 minutes by foot from the venue, so feel free to leave the car behind and go on a little stroll. 
+If you absolutely must come by car, there are limited spots right outside the venue that are not free so make sure you are bringing some change. 
+Once you get there, X will be waiting outside the castle gate and bring you in all togehter to be seated for the ceremony.
+</p>
+          <p class="timeline-text" data-lang="de">Wenn es für euch möglich ist, lasst euer Auto an eurem Hotel stehen. Die Parkplätze am Schloss sind sehr limitiert und nicht kostenlos, daher 
+würden wir euch empfehlen zu Fuß zur Location zu kommen. Die Hotels, die wir unten empfehlen sind alle nur unter 5 Minuten zu Fuß entfernt.</p>
         </div>
       </li>
       <li class="timeline-item">
         <span class="timeline-dot" aria-hidden="true"></span>
         <div class="timeline-content">
-          <p class="timeline-time">3:30 PM</p>
-          <h3 class="timeline-label">Ceremony</h3>
-          <p class="timeline-text">TEXT — a line about the ceremony location or setting.</p>
+          <p class="timeline-time">12:30 PM</p>
+          <h3 class="timeline-label" data-lang="en">Ceremony</h3>
+          <h3 class="timeline-label" data-lang="de">Trauung</h3>
+          <p class="timeline-text" data-lang="en">The ceremony will be happening right at the location.</p>
+          <p class="timeline-text" data-lang="de">Die Trauung findet direkt an der Location statt.</p>
         </div>
       </li>
       <li class="timeline-item">
         <span class="timeline-dot" aria-hidden="true"></span>
         <div class="timeline-content">
-          <p class="timeline-time">4:15 PM</p>
-          <h3 class="timeline-label">Cocktail Hour</h3>
-          <p class="timeline-text">TEXT — drinks, snacks, lawn games, whatever's happening.</p>
+          <p class="timeline-time">1 PM</p>
+          <h3 class="timeline-label" data-lang="en">Cocktail Hour</h3>
+          <h3 class="timeline-label" data-lang="de">Sektempfang</h3>
+          <p class="timeline-text" data-lang="en">LET'S GET DRINKING!!! Just kidding, after the ceremony we will have an hour for our guests to either enjoy a castle tour or tour the automobile museum right at the castle. (We will be taking couple pictures in the meantime) If you don't want to do either there is also a very beautiful little walk around the castle where you can enojoy the tranquility of 
+true German castle woods and check out the dog graveyard of the castle owners ( :(( so sad ). Let us know in advance if you'd like to view either the castle or the automuseum, we would have to buy the tickets in advance. We will meet at the big gate again at 13:55 aka 1:55 pm.</p>
+          <p class="timeline-text" data-lang="de">JETZT WIRD GSOFFN!!! Späßle :( Unsere Gäste haben nach der Trauung eine Stunde Zeit sich entweder an einer Schlossführung teilzunehmen oder sich das Automuseum direkt am Schloss anzuschauen. (Wir machen in der Zeit noch Bilder :) ) Wenn ihr an keinem von beidem Interesse habt, könnt ihr auch einen schönen Spaziergang um das Schloss machen, der Spazierweg führt einmal im Kreis um das Schloss, hier könnt ihr euch auch den Hundefriedhof anschauen ( :(((( )
+         Sagt uns bitte Bescheid, ob ihr die Schlossführung oder euch das Automuseum anschauen wollt, wir müssen die Karten im Voraus bestellen. Wir treffen uns alle wieder um 13:55 am Tor an dem ihr auch ankommen werdet um gemeinsam zum Garten zu gehen (Den Garten seht ihr auch, wenn ihr ankommt) </p>
+        </div>
+      </li>
+<li class="timeline-item">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="timeline-content">
+          <p class="timeline-time">2 PM</p>
+          <h3 class="timeline-label" data-lang="en">Truly Cocktail Hour</h3>
+          <h3 class="timeline-label" data-lang="de">Ernsthaft Sektempfang</h3>
+          <p class="timeline-text" data-lang="en">OK THIS TIME I AM BEING SERIOUS!!! We will have our first drink together ♥ Here you will get to choose between a couple of different options including Lillet Wilberry, Lemonade as well as Beer. We will also be serving some fingerfood.</p>
+          <p class="timeline-text" data-lang="de">OK DIESES MAL MACH ICH ERNST!!! Beim Sektempfang könnt ihr zwischen Lillet, Bier, Limonade oder Sekt wählen. Außerdem wird es verschiedes Fingerfood geben. </p>
+        </div>
+      </li>
+<li class="timeline-item">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="timeline-content">
+          <p class="timeline-time">4:00 PM</p>
+          <h3 class="timeline-label" data-lang="en">Coffee & Cake</h3>
+          <h3 class="timeline-label" data-lang="de">Kaffee & Kuchen</h3>
+          <p class="timeline-text" data-lang="en">A true German classic we will be having coffee and cake (a german tradition I can get behind). Which means we will be having our wedding cake BEFORE dinner. Sick right?</p>
+          <p class="timeline-text" data-lang="de">Ab 16 Uhr gibt es Kaffee und Kuchen. Unsere Hochzeitstorte wird also vor dem Abendessen angeschnitten. GIERIG. Außerdem sind unsere Gäste herzlich dazu eingeladen ein Lieblingsdessert mitzubringen, bitte fühlt euch hier aber nicht gezwungen etwas mitzubringen, es ist völlig in Ordnung kein Dessert mitzubringen.</p>
         </div>
       </li>
       <li class="timeline-item">
         <span class="timeline-dot" aria-hidden="true"></span>
         <div class="timeline-content">
           <p class="timeline-time">5:30 PM</p>
-          <h3 class="timeline-label">Dinner &amp; Toasts</h3>
-          <p class="timeline-text">TEXT — dinner style, and a note that speeches follow.</p>
+          <h3 class="timeline-label" data-lang="en">Dinner</h3>
+          <h3 class="timeline-label" data-lang="de">Abendessen</h3>
+          <p class="timeline-text" data-lang="en">We will be enjoying a BBQ. Hell yeah (i am vegetarian) Just kidding, we will have both meat as well as vegetarian options for the BBQ. All informations for the food will be found in the FAQ section Food.</p>
+          <p class="timeline-text" data-lang="de">Zum Abendessen wird es ein BBQ geben. Ich bin Vegetariarin...Ich mach nur Spaß, es wird vegetarische und FLEISCHIGE Köstlichkeiten geben. Für alle meine Kontrollfreaks: Alle Infos zum Essen findet ihr im FAQ Abschnitt "Essen". (Es is for real auch das wichtigste am ganzen Tag)</p>
         </div>
       </li>
       <li class="timeline-item">
         <span class="timeline-dot" aria-hidden="true"></span>
         <div class="timeline-content">
-          <p class="timeline-time">7:30 PM</p>
-          <h3 class="timeline-label">First Dance &amp; Party</h3>
-          <p class="timeline-text">TEXT — dancing, band or DJ, and end-of-night details.</p>
+          <p class="timeline-time">8 PM</p>
+          <h3 class="timeline-label" data-lang="en">First Dance &amp; Party</h3>
+          <h3 class="timeline-label" data-lang="de">Eröffnungstanz &amp; Party</h3>
+          <p class="timeline-text" data-lang="en">We will be having our first dance around 8pm and we will feel kinda cringe about it so please bare with us. After, we will start the Partyyyyyyy</p>
+          <p class="timeline-text" data-lang="de">Unser Eröffnungstanz wird gegen 20:00 Uhr stattfinden, es wird unangenehm für uns beide also bitte haltet euch bedeckt :(. Danach Partyyy</p>
         </div>
       </li>
+                                                                                                                                                                           
     </ol>
   </section>
 
   <!-- DETAILS -->
   <section id="details" class="section">
-    <h2 class="section-title">The Details</h2>
+    <h2 class="section-title" data-lang="en">The Details</h2>
+    <h2 class="section-title" data-lang="de">Die Details</h2>
     <div class="section-rule" aria-hidden="true"></div>
     <div class="detail-grid">
       <div class="detail-card">
-        <h3 class="detail-title">Ceremony</h3>
-        <p class="detail-text">TEXT — venue name and address. <a href="#" class="link">View on map</a></p>
+        <h3 class="detail-title" data-lang="en">Ceremony</h3>
+        <h3 class="detail-title" data-lang="de">Trauung</h3>
+        <p class="detail-text" data-lang="en">Schloss Langenburg, 74595 Langenburg — venue name and address. (They don't have a street address I swear. Just type that in)<a href="#" class="link">View on map</a></p>
+        <p class="detail-text" data-lang="de">Schloss Langenburg, 74595 Langenburg — Name und Adresse des Ortes. (Die haben for real keine Adresse gebt das einfach ein) <a href="#" class="link">Karte anzeigen</a></p>
       </div>
       <div class="detail-card">
-        <h3 class="detail-title">Reception</h3>
-        <p class="detail-text">TEXT — venue name and address, if different. <a href="#" class="link">View on map</a></p>
+        <h3 class="detail-title" data-lang="en">Dress Code</h3>
+        <h3 class="detail-title" data-lang="de">Dresscode</h3>
+        <p class="detail-text" data-lang="en">No dress code, come as you are but make it formal pleasseeeeeee. If you wear white I can't let you in so sorryyyy :(</p>
+        <p class="detail-text" data-lang="de">Kein Dresscode, zieht euch einfach etwas schönes an worin ihr euch wohlfühlt. Ich lass euch ernsthaft nicht rein, wenn ihr weiß anzieht. (Ich wollte es nur gesagt haben!!!!!)</p>
       </div>
-      <div class="detail-card">
-        <h3 class="detail-title">Dress Code</h3>
-        <p class="detail-text">TEXT — e.g. garden formal, and a note on the ground/weather if outdoors.</p>
+div class="detail-card">
+        <h3 class="detail-title" data-lang="en">The Next Day</h3>
+        <h3 class="detail-title" data-lang="de">Der Nächste Tag</h3>
+        <p class="detail-text" data-lang="en">We would love to have brunch with everyone the next morning at the Schlosscafe. It is right at the venue and serves a beautiful Brunch. If you'd like to come to Brunch please let us know in advance since we will have to book the slots. More Infos at the FAQ section Brunch.</p>
+        <p class="detail-text" data-lang="de">Wir würden sehr gerne mit euch Allen am Nächsten Tag Brunchen gehen. Es gibt ein großes Brunchbuffet direkt am Schlosscafe bei der Location. Wenn ihr möchtet, sagt uns gerne Bescheid, da wir die Gesamtanzahl vorher anmelden müssen. Mehr Infos im FAQ Abschnitt Brunch.</p>
       </div>
     </div>
   </section>
 
   <!-- TRAVEL & STAY -->
   <section id="travel" class="section">
-    <h2 class="section-title">Travel &amp; Stay</h2>
+    <h2 class="section-title" data-lang="en">Travel &amp; Stay</h2>
+    <h2 class="section-title" data-lang="de">Anreise &amp; Unterkunft</h2>
     <div class="section-rule" aria-hidden="true"></div>
     <div class="detail-grid">
       <div class="detail-card">
-        <h3 class="detail-title">Getting There</h3>
-        <p class="detail-text">TEXT — nearest airport, driving notes. <a href="#" class="link">LINKS to directions</a></p>
+        <h3 class="detail-title" data-lang="en">Getting There</h3>
+        <h3 class="detail-title" data-lang="de">Anreise</h3>
+        <p class="detail-text" data-lang="en">There is a trainstation if you come by train, however we would recommend you come by car if you are able to.</p>
+        <p class="detail-text" data-lang="de">Es gibt einen Bahnhof in Langenburg, wir würden euch aber empfehlen mit dem Auto zu kommen, wenn das möglich ist.</p>
       </div>
       <div class="detail-card">
-        <h3 class="detail-title">Where to Stay</h3>
-        <p class="detail-text">TEXT — a recommended hotel or two. <a href="#" class="link">Book our room block</a></p>
-      </div>
-      <div class="detail-card">
-        <h3 class="detail-title">Getting Around</h3>
-        <p class="detail-text">TEXT — shuttle info, rideshare notes, or parking.</p>
-      </div>
+        <h3 class="detail-title" data-lang="en">Where to Stay</h3>
+        <h3 class="detail-title" data-lang="de">Unterkunft</h3>
+        <p class="detail-text" data-lang="en">There are different options depending on where you'd like to stay, the venue itself has a couple rooms as well as hotels that are 2-4 minutes are away. <a href="https://schloss-langenburg.de/uebernachten/" class="link">Sleeping options right at the castle</a>
+<a href="https://www.booking.com/hotel/de/gasthof-zur-post-langenburg.de.html?aid=2127499&label=metagha-link-LUDE-hotel-14676288_dev-desktop_los-1_bw-2_dow-Monday_defdate-1_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-10_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20260928_ppt-0&sid=ad1b28b54ada6b79ee5813d43d4713f9&all_sr_blocks=1390985601_411064934_2_1_0&checkin=2026-09-28&checkout=2026-09-29&dest_id=14676288&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=1390985601_411064934_2_1_0&hpos=2&matching_block_id=1390985601_411064934_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1390985601_411064934_2_1_0__11500&srepoch=1790454267&srpvid=ee408ebcb2be0ab1&type=total&ucfs=1&" class="link">Hotel</a> I wouldn't recommend Hotel Krone it said there are spiders in the reviews :'( </p>
+        <p class="detail-text" data-lang="de">Für die Unterkunft habt ihr verschiedene Möglichkeiten, es gibt Ferienwohnungen direkt am Schloss oder Hotels die 2-4 Gehminuten von der Location weg sind. <a href="https://schloss-langenburg.de/uebernachten/" class="link">Unterkünfte direkt am Schloss</a>
+<a href="https://www.booking.com/hotel/de/gasthof-zur-post-langenburg.de.html?aid=2127499&label=metagha-link-LUDE-hotel-14676288_dev-desktop_los-1_bw-2_dow-Monday_defdate-1_room-0_gstadt-2_rateid-public_aud-0_gacid-_mcid-10_ppa-0_clrid-0_ad-0_gstkid-0_checkin-20260928_ppt-0&sid=ad1b28b54ada6b79ee5813d43d4713f9&all_sr_blocks=1390985601_411064934_2_1_0&checkin=2026-09-28&checkout=2026-09-29&dest_id=14676288&dest_type=hotel&dist=0&group_adults=2&group_children=0&hapos=2&highlighted_blocks=1390985601_411064934_2_1_0&hpos=2&matching_block_id=1390985601_411064934_2_1_0&no_rooms=1&req_adults=2&req_children=0&room1=A%2CA&sb_price_type=total&sr_order=popularity&sr_pri_blocks=1390985601_411064934_2_1_0__11500&srepoch=1790454267&srpvid=ee408ebcb2be0ab1&type=total&ucfs=1&" class="link">Hotel</a></p>
+      Das Hotel Krone würde ich euch nicht empfehlen, da stand die haben Spinnen :'( </div>
     </div>
   </section>
 
   <!-- REGISTRY -->
   <section id="registry" class="section section-center">
-    <h2 class="section-title">Registry</h2>
+    <h2 class="section-title" data-lang="en">Registry</h2>
+    <h2 class="section-title" data-lang="de">Geschenke</h2>
     <div class="section-rule" aria-hidden="true"></div>
-    <p class="section-text">
-      TEXT — your presence is the real gift, but if you'd like to spoil us anyway, we're
-      registered <a href="#" class="link">here</a> and <a href="#" class="link">here</a>.
+    <p class="section-text" data-lang="en">
+      Your presence is the real gift, other than that hard cold cash would be the best for us :).
+    </p>
+    <p class="section-text" data-lang="de">
+      Eure Anwesenheit ist das beste Geschenk. (Ich musst jetzt selber lachen) Sonst freuen wir uns über CASH.
     </p>
   </section>
 
   <!-- FAQ -->
   <section id="faq" class="section">
-    <h2 class="section-title">Frequently Asked Questions</h2>
+    <h2 class="section-title" data-lang="en">FAQ</h2>
+    <h2 class="section-title" data-lang="de">FAQ</h2>
     <div class="section-rule" aria-hidden="true"></div>
     <div class="faq-list">
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          HEADERS — Can I bring a plus-one?
-        </button>
-        <div class="faq-answer">
-          <p>TEXT — your answer here. You can even drop in a <a href="#" class="link">LINKS</a> if it helps, like a link to the RSVP form.</p>
+        <button class="faq-question" data-lang="en" aria-expanded="false">Can I bring a plus-one, that has not specifically been invited?</button>
+        <button class="faq-question" data-lang="de" aria-expanded="false">Kann ich eine Begleitung mitbringen, die nicht eingeladen war?</button>
+        <div class="faq-answer" data-lang="en">
+          <p>Are you out of your mind?</p>
+        </div>
+        <div class="faq-answer" data-lang="de">
+          <p>Seid ihr geisteskrank?</p>
         </div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          HEADERS — Are kids welcome?
-        </button>
-        <div class="faq-answer">
-          <p>TEXT — your answer here.</p>
-        </div>
+        <button class="faq-question" data-lang="en" aria-expanded="false">Are kids welcome?</button>
+        <button class="faq-question" data-lang="de" aria-expanded="false">Sind Kinder willkommen?</button>
+        <div class="faq-answer" data-lang="en"><p>Yes, kids are welcome. Please no playing or throwing things in the fountain as well as the flower areas.</p></div>
+        <div class="faq-answer" data-lang="de"><p>Ja, Kinder sind willkommen. Bitte kümmert euch den Tag über um eure Kinder und passt auf, dass nichts in den Springbrunnen geworfen wird und nicht außerhalb der Laufwege gespielt wird, da der Garten ein historisches Gartendenkmal ist.</p></div>
       </div>
       <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          HEADERS — What's the weather usually like?
-        </button>
-        <div class="faq-answer">
-          <p>TEXT — your answer here. Maybe link to a <a href="#" class="link">packing list</a>.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <button class="faq-question" aria-expanded="false">
-          HEADERS — When should I RSVP by?
-        </button>
-        <div class="faq-answer">
-          <p>TEXT — your answer here, with a <a href="#" class="link">LINKS to RSVP</a> whenever you add that section.</p>
-        </div>
+        <button class="faq-question" data-lang="en" aria-expanded="false">What Food will there be?</button>
+        <button class="faq-question" data-lang="de" aria-expanded="false">Was gibt's zu Essen?</button>
+        <div class="faq-answer" data-lang="en"><p>Here it is the most important question of them all. </p></div>
+        <div class="faq-answer" data-lang="de"><p>Wichtigste Frage überhaupt einfach. </p></div>
       </div>
     </div>
   </section>
@@ -219,9 +269,10 @@
   <!-- FOOTER -->
   <footer class="footer">
     <p class="footer-leaf" aria-hidden="true">&#10058;</p>
-    <p class="footer-names">NAMES</p>
-    <p class="footer-text">We can't wait to see you there.</p>
-    <p class="footer-text">Questions? Reach us at <a href="mailto:you@example.com" class="link">you@example.com</a></p>
+    <p class="footer-names">Julia & Matt</p>
+    <p class="footer-text" data-lang="en">We can't wait to see you there.</p>
+    <p class="footer-text" data-lang="de">Wir freuen uns riesig auf euch.</p>
+    
   </footer>
 
 </div>
