@@ -1,6 +1,4 @@
-/* =========================================================
-   Design tokens
-   ========================================================= */
+
 :root {
   --forest-dark:   #0f2a1e;   /* page background */
   --forest-mid:    #163726;   /* card / section-alt background */
@@ -282,6 +280,7 @@ a { color: inherit; }
 
   .nav-links li { border-top: 1px solid var(--forest-line); }
   .nav-links a { display: block; padding: 0.85rem 1.25rem; }
+  .nav-links a[hidden] { display: none; }
 
   .nav-lang-switch {
     justify-content: center;
@@ -482,6 +481,10 @@ a { color: inherit; }
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+}
+
+.faq-question[hidden] {
+  display: none;
 }
 
 .faq-question::after {
