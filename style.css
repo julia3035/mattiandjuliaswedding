@@ -526,9 +526,9 @@ a { color: inherit; }
 
 .timeline-content { grid-row: 1; }
 
-/* Alternate sides: odd items on the left, even items on the right */
-.timeline-item:nth-child(odd) .timeline-content { grid-column: 1; text-align: right; }
-.timeline-item:nth-child(even) .timeline-content { grid-column: 3; text-align: left; }
+/* Alternate sides: odd items on the right, even items on the left */
+.timeline-item:nth-child(odd) .timeline-content { grid-column: 3; text-align: left; }
+.timeline-item:nth-child(even) .timeline-content { grid-column: 1; text-align: right; }
 
 .timeline-time {
   margin: 0 0 0.15rem;
