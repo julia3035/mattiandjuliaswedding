@@ -51,13 +51,19 @@ body {
   font-family: var(--font-body);
   font-size: 1.05rem;
   line-height: 1.7;
-  background:
-    linear-gradient(rgba(18, 24, 12, 0.5), rgba(18, 24, 12, 0.5)),
-    url("images/background.jpg");
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
   background-color: #2f3a24;
+}
+
+/* Blurred, oversized background layer — avoids the sharp/grainy stretched look */
+body::before {
+  content: "";
+  position: fixed;
+  inset: -30px;
+  z-index: -1;
+  background: url("images/background.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(22px) brightness(0.6) saturate(1.05);
 }
 
 a { color: inherit; }
@@ -102,7 +108,7 @@ a { color: inherit; }
   align-items: center;
   justify-content: center;
   padding: 1.5rem;
-  background: var(--olive-deep);
+  background: rgba(24, 30, 15, 0.45);
 }
 
 .gate[hidden] { display: none; }
@@ -117,8 +123,6 @@ a { color: inherit; }
   border-radius: var(--radius-panel);
   box-shadow: var(--shadow-lg);
 }
-
-.gate-leaf { color: var(--ink-soft); font-size: 1.1rem; margin: 0 0 0.75rem; }
 
 .gate-title {
   font-family: var(--font-display);
@@ -387,12 +391,34 @@ a { color: inherit; }
 }
 
 .divider {
-  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
   margin: 1.5rem auto;
-  width: 130px;
 }
 
-.divider-leaf { width: 100%; height: auto; display: block; }
+.divider-line {
+  flex: 1;
+  max-width: 70px;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.55;
+}
+
+.divider-initials {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  white-space: nowrap;
+}
+
+/* Smaller, ink-toned version for the (light) password card */
+.divider-sm .divider-line { max-width: 40px; background: var(--ink-soft); opacity: 0.4; }
+.divider-sm .divider-initials { font-size: 1rem; color: var(--ink-soft); }
 
 .hero-desc {
   color: var(--cream-dim);
@@ -460,7 +486,7 @@ a { color: inherit; }
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  max-width: 480px;
+  max-width: 640px;
   position: relative;
 }
 
@@ -477,15 +503,19 @@ a { color: inherit; }
 
 .timeline-item {
   position: relative;
-  padding-top: 2.5rem;
+  display: grid;
+  grid-template-columns: 1fr 28px 1fr;
+  column-gap: 1.25rem;
+  align-items: start;
+  padding: 1.75rem 0;
 }
 .timeline-item:first-child { padding-top: 0; }
 
 .timeline-dot {
-  position: absolute;
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: center;
+  margin-top: 0.4rem;
   width: 16px;
   height: 16px;
   border-radius: 50%;
@@ -494,8 +524,11 @@ a { color: inherit; }
   box-shadow: 0 0 0 4px rgba(215, 189, 133, 0.14);
 }
 
-.timeline-content { padding-top: 1.6rem; }
-.timeline-item:first-child .timeline-content { padding-top: 0; }
+.timeline-content { grid-row: 1; }
+
+/* Alternate sides: odd items on the left, even items on the right */
+.timeline-item:nth-child(odd) .timeline-content { grid-column: 1; text-align: right; }
+.timeline-item:nth-child(even) .timeline-content { grid-column: 3; text-align: left; }
 
 .timeline-time {
   margin: 0 0 0.15rem;
@@ -509,7 +542,7 @@ a { color: inherit; }
 .timeline-label {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   color: var(--cream);
   margin: 0 0 0.5rem;
 }
@@ -517,10 +550,31 @@ a { color: inherit; }
 .timeline-text {
   margin: 0;
   color: var(--cream-dim);
-  max-width: 48ch;
-  margin-left: auto;
-  margin-right: auto;
   white-space: pre-line;
+}
+
+@media (max-width: 620px) {
+  .timeline-item {
+    grid-template-columns: 1fr;
+    padding-top: 2.25rem;
+  }
+  .timeline-item:first-child { padding-top: 0; }
+  .timeline-dot {
+    grid-column: 1;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+    margin-top: 0;
+  }
+  .timeline-content,
+  .timeline-item:nth-child(odd) .timeline-content,
+  .timeline-item:nth-child(even) .timeline-content {
+    grid-column: 1;
+    text-align: center;
+    padding-top: 1.5rem;
+  }
+  .timeline-item:first-child .timeline-content { padding-top: 0; }
 }
 
 /* =========================================================
