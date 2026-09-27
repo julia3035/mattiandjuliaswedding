@@ -63,7 +63,7 @@ body::before {
   background: url("images/background.jpg");
   background-size: cover;
   background-position: center;
-  filter: blur(22px) brightness(0.4) saturate(1.05);
+  filter: blur(22px) brightness(0.6) saturate(1.05);
 }
 
 a { color: inherit; }
@@ -118,8 +118,9 @@ a { color: inherit; }
   max-width: 380px;
   text-align: center;
   padding: 2.75rem 2.25rem;
-  background: var(--cream);
-  color: var(--ink);
+  background: rgba(24, 30, 15, 0.9);
+  color: var(--cream);
+  border: 1px solid var(--olive-line);
   border-radius: var(--radius-panel);
   box-shadow: var(--shadow-lg);
 }
@@ -127,13 +128,13 @@ a { color: inherit; }
 .gate-title {
   font-family: var(--font-display);
   font-size: clamp(1.8rem, 6vw, 2.4rem);
-  color: var(--ink);
+  color: var(--cream);
   margin: 0 0 0.5rem;
   letter-spacing: 0.02em;
 }
 
 .gate-sub {
-  color: var(--ink-soft);
+  color: var(--cream-dim);
   margin: 0 0 1.5rem;
   font-size: 0.95rem;
 }
@@ -144,7 +145,7 @@ a { color: inherit; }
   font-family: var(--font-sans);
   font-size: 0.78rem;
   letter-spacing: 0.03em;
-  color: var(--ink-soft);
+  color: var(--cream-dim);
   text-align: left;
 }
 
@@ -152,16 +153,16 @@ a { color: inherit; }
   padding: 0.75rem 1.1rem;
   font-family: var(--font-body);
   font-size: 1rem;
-  background: #fff;
-  border: 1px solid rgba(51, 64, 31, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid var(--olive-line);
   border-radius: var(--radius-sm);
-  color: var(--ink);
+  color: var(--cream);
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
 .gate-input:focus-visible {
-  border-color: var(--ink-soft);
-  box-shadow: 0 0 0 3px rgba(92, 107, 70, 0.15);
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(215, 189, 133, 0.18);
 }
 
 .gate-button {
@@ -172,8 +173,8 @@ a { color: inherit; }
   font-size: 0.85rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--cream);
-  background: var(--ink);
+  color: var(--olive-deep);
+  background: var(--gold);
   border: none;
   border-radius: var(--radius-pill);
   cursor: pointer;
@@ -182,14 +183,14 @@ a { color: inherit; }
 
 .gate-button:hover,
 .gate-button:focus-visible {
-  background: var(--ink-soft);
+  background: #e5cd97;
   transform: translateY(-2px);
   box-shadow: var(--shadow-sm);
 }
 
 .gate-button:active { transform: translateY(0); }
 
-.gate-error { color: #a4432b; font-size: 0.85rem; margin: 0; }
+.gate-error { color: #e2a68f; font-size: 0.85rem; margin: 0; }
 
 /* =========================================================
    Language switcher
@@ -416,9 +417,9 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
-/* Smaller, ink-toned version for the (light) password card */
-.divider-sm .divider-line { max-width: 40px; background: var(--ink-soft); opacity: 0.4; }
-.divider-sm .divider-initials { font-size: 1rem; color: var(--ink-soft); }
+/* Smaller version for the password card (now dark, same gold tone as elsewhere) */
+.divider-sm .divider-line { max-width: 40px; }
+.divider-sm .divider-initials { font-size: 1rem; }
 
 .hero-desc {
   color: var(--cream-dim);
@@ -486,7 +487,7 @@ a { color: inherit; }
   list-style: none;
   margin: 0 auto;
   padding: 0;
-  max-width: 640px;
+  max-width: 760px;
   position: relative;
 }
 
