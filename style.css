@@ -716,7 +716,7 @@ a { color: inherit; }
    GIF / image frame — wrap any <img> in <div class="media-frame">
    ========================================================= */
 .media-frame {
-  max-width: 420px;
+  max-width: 220px;
   margin: 1.75rem auto;
   border-radius: var(--radius-card);
   overflow: hidden;
