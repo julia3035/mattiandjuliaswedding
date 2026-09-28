@@ -63,7 +63,7 @@ body::before {
   background: url("images/background.jpg");
   background-size: cover;
   background-position: center;
-  filter: blur(22px) brightness(0.4) saturate(1.05);
+  filter: blur(22px) brightness(0.6) saturate(1.05);
 }
 
 a { color: inherit; }
@@ -711,3 +711,21 @@ a { color: inherit; }
 }
 
 .footer-text { margin: 0.15rem 0; color: var(--cream-dim); font-size: 0.95rem; }
+
+/* =========================================================
+   GIF / image frame — wrap any <img> in <div class="media-frame">
+   ========================================================= */
+.media-frame {
+  max-width: 420px;
+  margin: 1.75rem auto;
+  border-radius: var(--radius-card);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--olive-line);
+}
+
+.media-frame img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
