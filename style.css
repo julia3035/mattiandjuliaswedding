@@ -690,7 +690,7 @@ a { color: inherit; }
   white-space: pre-line;
 }
 
-.faq-item.is-open .faq-answer { max-height: 420px; }
+.faq-item.is-open .faq-answer { max-height: 520px; }
 
 /* =========================================================
    Footer
