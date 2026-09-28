@@ -2,18 +2,18 @@
    Design tokens
    ========================================================= */
 :root {
-  --olive-deep:    #2f3a24;   /* dark panels */
+  --olive-deep:    #2f3a24;
   --olive-line:    rgba(247, 241, 226, 0.14);
 
-  --cream:         #f7f1e2;   /* light panels */
-  --card-bg:       #eee4c9;   /* nested card bg — softer than pure white */
+  --cream:         #f7f1e2;
+  --card-bg:       #eee4c9;
   --card-bg-hover: #e6d9b6;
 
-  --ink:           #33401f;   /* primary readable text on cream */
-  --ink-soft:      #5c6b46;   /* secondary/label text on cream */
+  --ink:           #33401f;
+  --ink-soft:      #5c6b46;
 
-  --gold:          #d7bd85;   /* accents on dark panels */
-  --cream-dim:     #dcd3b6;   /* secondary text on dark panels */
+  --gold:          #d7bd85;
+  --cream-dim:     #dcd3b6;
 
   --font-display: 'Cormorant Garamond', 'Iowan Old Style', Georgia, serif;
   --font-body:    'EB Garamond', Georgia, serif;
@@ -33,7 +33,9 @@
   --shadow-lg: 0 32px 70px -20px rgba(10, 14, 6, 0.55);
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -41,8 +43,14 @@ html {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 body {
@@ -54,7 +62,7 @@ body {
   background-color: #2f3a24;
 }
 
-/* Blurred, oversized background layer — avoids the sharp/grainy stretched look */
+/* Blurred, oversized background layer */
 body::before {
   content: "";
   position: fixed;
@@ -66,7 +74,9 @@ body::before {
   filter: blur(22px) brightness(0.6) saturate(1.05);
 }
 
-a { color: inherit; }
+a {
+  color: inherit;
+}
 
 .link {
   color: var(--ink);
@@ -75,16 +85,30 @@ a { color: inherit; }
   text-decoration-thickness: 1px;
   font-weight: 600;
 }
-.panel-dark .link { color: var(--gold); }
-.link:hover, .link:focus-visible { opacity: 0.75; }
+
+.panel-dark .link {
+  color: var(--gold);
+}
+
+.link:hover,
+.link:focus-visible {
+  opacity: 0.75;
+}
 
 :focus-visible {
   outline: 2px solid var(--gold);
   outline-offset: 3px;
 }
 
-.wrap-wide { max-width: var(--wide); margin: 0 auto; }
-.wrap-narrow { max-width: var(--narrow); margin: 0 auto; }
+.wrap-wide {
+  max-width: var(--wide);
+  margin: 0 auto;
+}
+
+.wrap-narrow {
+  max-width: var(--narrow);
+  margin: 0 auto;
+}
 
 .eyebrow {
   font-family: var(--font-sans);
@@ -95,11 +119,16 @@ a { color: inherit; }
   color: var(--ink-soft);
   margin: 0 0 0.75rem;
 }
-.eyebrow-cream { color: var(--gold); }
+
+.eyebrow-cream {
+  color: var(--gold);
+}
+
 
 /* =========================================================
    Password gate
    ========================================================= */
+
 .gate {
   position: fixed;
   inset: 0;
@@ -111,7 +140,9 @@ a { color: inherit; }
   background: rgba(24, 30, 15, 0.45);
 }
 
-.gate[hidden] { display: none; }
+.gate[hidden] {
+  display: none;
+}
 
 .gate-card {
   width: 100%;
@@ -139,7 +170,11 @@ a { color: inherit; }
   font-size: 0.95rem;
 }
 
-.gate-form { display: flex; flex-direction: column; gap: 0.75rem; }
+.gate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
 .gate-label {
   font-family: var(--font-sans);
@@ -178,7 +213,9 @@ a { color: inherit; }
   border: none;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+  transition: background 0.15s ease,
+              transform 0.15s ease,
+              box-shadow 0.15s ease;
 }
 
 .gate-button:hover,
@@ -188,13 +225,21 @@ a { color: inherit; }
   box-shadow: var(--shadow-sm);
 }
 
-.gate-button:active { transform: translateY(0); }
+.gate-button:active {
+  transform: translateY(0);
+}
 
-.gate-error { color: #e2a68f; font-size: 0.85rem; margin: 0; }
+.gate-error {
+  color: #e2a68f;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
 
 /* =========================================================
    Language switcher
    ========================================================= */
+
 .lang-btn {
   font-family: var(--font-sans);
   font-size: 0.72rem;
@@ -206,11 +251,15 @@ a { color: inherit; }
   border-radius: var(--radius-pill);
   padding: 0.3rem 0.75rem;
   cursor: pointer;
-  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+  transition: color 0.15s ease,
+              border-color 0.15s ease,
+              background 0.15s ease;
 }
 
 .lang-btn:hover,
-.lang-btn:focus-visible { border-color: var(--ink-soft); }
+.lang-btn:focus-visible {
+  border-color: var(--ink-soft);
+}
 
 .lang-btn.is-active {
   color: var(--cream);
@@ -230,17 +279,24 @@ a { color: inherit; }
   background: rgba(247, 241, 226, 0.06);
   border-color: var(--olive-line);
 }
+
 .nav-lang-switch .lang-btn:hover,
-.nav-lang-switch .lang-btn:focus-visible { border-color: var(--gold); color: var(--gold); }
+.nav-lang-switch .lang-btn:focus-visible {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+
 .nav-lang-switch .lang-btn.is-active {
   color: var(--olive-deep);
   background: var(--gold);
   border-color: var(--gold);
 }
 
+
 /* =========================================================
    Nav
    ========================================================= */
+
 .nav {
   position: sticky;
   top: 0;
@@ -284,7 +340,10 @@ a { color: inherit; }
   padding: 0;
 }
 
-.nav-lang-switch { display: flex; gap: 0.4rem; }
+.nav-lang-switch {
+  display: flex;
+  gap: 0.4rem;
+}
 
 .nav-links a {
   text-decoration: none;
@@ -296,11 +355,15 @@ a { color: inherit; }
   text-transform: uppercase;
   padding-bottom: 3px;
   border-bottom: 1px solid transparent;
-  transition: color 0.15s ease, border-color 0.15s ease;
+  transition: color 0.15s ease,
+              border-color 0.15s ease;
 }
 
 .nav-links a:hover,
-.nav-links a:focus-visible { color: var(--gold); border-color: var(--gold); }
+.nav-links a:focus-visible {
+  color: var(--gold);
+  border-color: var(--gold);
+}
 
 .nav-toggle {
   display: none;
@@ -322,7 +385,9 @@ a { color: inherit; }
 }
 
 @media (max-width: 780px) {
-  .nav-toggle { display: flex; }
+  .nav-toggle {
+    display: flex;
+  }
 
   .nav-inner nav {
     flex-direction: column;
@@ -344,18 +409,34 @@ a { color: inherit; }
     transition: max-height 0.25s ease;
   }
 
-  .nav-links.is-open { max-height: 420px; }
+  .nav-links.is-open {
+    max-height: 420px;
+  }
 
-  .nav-links li:not(:first-child) { border-top: 1px solid var(--olive-line); }
-  .nav-links a { display: block; padding: 0.9rem 1.5rem; }
-  .nav-links a[hidden] { display: none; }
+  .nav-links li:not(:first-child) {
+    border-top: 1px solid var(--olive-line);
+  }
 
-  .nav-lang-switch { justify-content: center; padding: 0.85rem 0; }
+  .nav-links a {
+    display: block;
+    padding: 0.9rem 1.5rem;
+  }
+
+  .nav-links a[hidden] {
+    display: none;
+  }
+
+  .nav-lang-switch {
+    justify-content: center;
+    padding: 0.85rem 0;
+  }
 }
 
+
 /* =========================================================
-   Hero — simple, centered, smaller
+   Hero
    ========================================================= */
+
 .hero {
   max-width: 620px;
   margin: 0 auto;
@@ -417,9 +498,13 @@ a { color: inherit; }
   white-space: nowrap;
 }
 
-/* Smaller version for the password card (now dark, same gold tone as elsewhere) */
-.divider-sm .divider-line { max-width: 40px; }
-.divider-sm .divider-initials { font-size: 1rem; }
+.divider-sm .divider-line {
+  max-width: 40px;
+}
+
+.divider-sm .divider-initials {
+  font-size: 1rem;
+}
 
 .hero-desc {
   color: var(--cream-dim);
@@ -427,9 +512,11 @@ a { color: inherit; }
   margin: 0 auto;
 }
 
+
 /* =========================================================
-   Sections & panels — all text centered
+   Sections & panels
    ========================================================= */
+
 .section {
   padding: 2rem 1.5rem;
 }
@@ -461,7 +548,10 @@ a { color: inherit; }
   color: var(--ink);
   margin: 0 0 0.75rem;
 }
-.section-title-cream { color: var(--cream); }
+
+.section-title-cream {
+  color: var(--cream);
+}
 
 .section-rule {
   width: 44px;
@@ -470,7 +560,10 @@ a { color: inherit; }
   background: var(--ink-soft);
   margin: 0 auto 1.75rem;
 }
-.section-rule-cream { background: var(--gold); }
+
+.section-rule-cream {
+  background: var(--gold);
+}
 
 .section-text {
   max-width: 58ch;
@@ -478,11 +571,17 @@ a { color: inherit; }
   margin-right: auto;
   color: var(--ink);
 }
-.panel-dark .section-text { color: var(--cream-dim); }
+
+.panel-dark .section-text {
+  color: var(--cream-dim);
+}
+
 
 /* =========================================================
-   Timeline — centered, line + dots down the middle
+   Timeline
+   Desktop: alternating left/right
    ========================================================= */
+
 .timeline {
   list-style: none;
   margin: 0 auto;
@@ -510,7 +609,10 @@ a { color: inherit; }
   align-items: start;
   padding: 1.75rem 0;
 }
-.timeline-item:first-child { padding-top: 0; }
+
+.timeline-item:first-child {
+  padding-top: 0;
+}
 
 .timeline-dot {
   grid-column: 2;
@@ -523,13 +625,25 @@ a { color: inherit; }
   background: var(--olive-deep);
   border: 2px solid var(--gold);
   box-shadow: 0 0 0 4px rgba(215, 189, 133, 0.14);
+  position: relative;
+  z-index: 2;
 }
 
-.timeline-content { grid-row: 1; }
+.timeline-content {
+  grid-row: 1;
+}
 
-/* Alternate sides: odd items on the right, even items on the left */
-.timeline-item:nth-child(odd) .timeline-content { grid-column: 3; text-align: left; }
-.timeline-item:nth-child(even) .timeline-content { grid-column: 1; text-align: right; }
+/* Odd items right */
+.timeline-item:nth-child(odd) .timeline-content {
+  grid-column: 3;
+  text-align: left;
+}
+
+/* Even items left */
+.timeline-item:nth-child(even) .timeline-content {
+  grid-column: 1;
+  text-align: right;
+}
 
 .timeline-time {
   margin: 0 0 0.15rem;
@@ -554,40 +668,120 @@ a { color: inherit; }
   white-space: pre-line;
 }
 
-@media (max-width: 620px) {
-  .timeline-item {
-    grid-template-columns: 1fr;
-    padding-top: 2.25rem;
-  }
-  .timeline-item:first-child { padding-top: 0; }
-  .timeline-dot {
-    grid-column: 1;
-    position: absolute;
-    left: 50%;
-    top: 0;
-    transform: translateX(-50%);
-    margin-top: 0;
-  }
-  .timeline-content,
-  .timeline-item:nth-child(odd) .timeline-content,
-  .timeline-item:nth-child(even) .timeline-content {
-    grid-column: 1;
-    text-align: center;
-    padding-top: 1.5rem;
-  }
-  .timeline-item:first-child .timeline-content { padding-top: 0; }
-}
 
 /* =========================================================
-   Card grid (Details / Travel)
+   Timeline — MOBILE FIX
+   Keep alternating left/right with line in center
    ========================================================= */
+
+@media (max-width: 620px) {
+
+  .timeline {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .timeline::before {
+    left: 50%;
+    transform: translateX(-50%);
+    top: 6px;
+    bottom: 6px;
+  }
+
+  .timeline-item {
+    /*
+       Left text | center timeline | right text
+    */
+    grid-template-columns:
+      minmax(0, 1fr)
+      20px
+      minmax(0, 1fr);
+
+    column-gap: 0.6rem;
+    padding: 1.5rem 0;
+  }
+
+  .timeline-item:first-child {
+    padding-top: 0;
+  }
+
+  .timeline-dot {
+    grid-column: 2;
+    grid-row: 1;
+
+    position: relative;
+    left: auto;
+    top: auto;
+
+    transform: none;
+
+    justify-self: center;
+    align-self: start;
+
+    margin-top: 0.35rem;
+
+    width: 12px;
+    height: 12px;
+
+    border-width: 2px;
+
+    z-index: 2;
+  }
+
+  .timeline-content {
+    grid-row: 1;
+    min-width: 0;
+    padding-top: 0;
+  }
+
+  /* Odd entries stay on RIGHT */
+  .timeline-item:nth-child(odd) .timeline-content {
+    grid-column: 3;
+    text-align: left;
+  }
+
+  /* Even entries stay on LEFT */
+  .timeline-item:nth-child(even) .timeline-content {
+    grid-column: 1;
+    text-align: right;
+  }
+
+  .timeline-time {
+    font-size: 0.65rem;
+    line-height: 1.35;
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+
+  .timeline-label {
+    font-size: 1rem;
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+  }
+
+  .timeline-text {
+    font-size: 0.86rem;
+    line-height: 1.4;
+
+    white-space: pre-line;
+
+    overflow-wrap: anywhere;
+    word-break: normal;
+    hyphens: auto;
+  }
+}
+
+
+/* =========================================================
+   Card grid
+   ========================================================= */
+
 .card-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1.5rem;
 }
 
-/* Travel: stacked, narrower, not edge-to-edge */
 .card-grid-stack {
   grid-template-columns: 1fr;
   max-width: 460px;
@@ -600,7 +794,9 @@ a { color: inherit; }
   border-radius: var(--radius-card);
   padding: 1.75rem;
   box-shadow: var(--shadow-sm);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              background 0.2s ease;
   text-align: center;
 }
 
@@ -615,7 +811,9 @@ a { color: inherit; }
   border-color: var(--olive-line);
 }
 
-.detail-card-dark:hover { background: rgba(247, 241, 226, 0.16); }
+.detail-card-dark:hover {
+  background: rgba(247, 241, 226, 0.16);
+}
 
 .detail-title {
   font-family: var(--font-display);
@@ -624,29 +822,45 @@ a { color: inherit; }
   margin: 0 0 0.5rem;
   color: var(--ink);
 }
-.panel-dark .detail-title { color: var(--cream); }
+
+.panel-dark .detail-title {
+  color: var(--cream);
+}
 
 .detail-text {
   margin: 0;
   color: var(--ink-soft);
   white-space: pre-line;
 }
-.panel-dark .detail-text { color: var(--cream-dim); }
+
+.panel-dark .detail-text {
+  color: var(--cream-dim);
+}
+
 
 /* =========================================================
-   FAQ — centered question text, icon pinned right
+   FAQ
    ========================================================= */
-.faq-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
 
 .faq-item {
   border-radius: var(--radius-card);
   background: rgba(247, 241, 226, 0.08);
   overflow: hidden;
   box-shadow: var(--shadow-sm);
-  transition: background 0.2s ease, box-shadow 0.2s ease;
+  transition: background 0.2s ease,
+              box-shadow 0.2s ease;
 }
 
-.faq-item:hover { background: rgba(247, 241, 226, 0.16); box-shadow: var(--shadow-md); }
+.faq-item:hover {
+  background: rgba(247, 241, 226, 0.16);
+  box-shadow: var(--shadow-md);
+}
 
 .faq-question {
   position: relative;
@@ -659,9 +873,15 @@ a { color: inherit; }
   font-family: var(--font-body);
   font-size: 1rem;
   cursor: pointer;
+
+  /* Helps long questions wrap correctly */
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
-.faq-question[hidden] { display: none; }
+.faq-question[hidden] {
+  display: none;
+}
 
 .faq-question::after {
   content: "+";
@@ -674,7 +894,9 @@ a { color: inherit; }
   transition: transform 0.2s ease;
 }
 
-.faq-question[aria-expanded="true"]::after { transform: translateY(-50%) rotate(45deg); }
+.faq-question[aria-expanded="true"]::after {
+  transform: translateY(-50%) rotate(45deg);
+}
 
 .faq-answer {
   max-height: 0;
@@ -688,19 +910,35 @@ a { color: inherit; }
   margin: 0 0 1.1rem;
   color: var(--cream-dim);
   white-space: pre-line;
+
+  /* Prevent long text from overflowing */
+  overflow-wrap: anywhere;
+  word-break: normal;
 }
 
-.faq-item.is-open .faq-answer { max-height: 820px; }
+/*
+   FIX:
+   Previous value was 820px, which could cut off
+   long FAQ answers on mobile.
+*/
+.faq-item.is-open .faq-answer {
+  max-height: 3000px;
+}
+
 
 /* =========================================================
    Footer
    ========================================================= */
+
 .footer {
   text-align: center;
   padding: 3.5rem 1.5rem 4rem;
 }
 
-.footer-leaf { color: var(--gold); margin: 0 0 0.5rem; }
+.footer-leaf {
+  color: var(--gold);
+  margin: 0 0 0.5rem;
+}
 
 .footer-names {
   font-family: var(--font-display);
@@ -710,11 +948,17 @@ a { color: inherit; }
   margin: 0 0 0.35rem;
 }
 
-.footer-text { margin: 0.15rem 0; color: var(--cream-dim); font-size: 0.95rem; }
+.footer-text {
+  margin: 0.15rem 0;
+  color: var(--cream-dim);
+  font-size: 0.95rem;
+}
+
 
 /* =========================================================
-   GIF / image frame — wrap any <img> in <div class="media-frame">
+   GIF / image frame
    ========================================================= */
+
 .media-frame {
   max-width: 220px;
   margin: 1.75rem auto;
@@ -728,4 +972,103 @@ a { color: inherit; }
   display: block;
   width: 100%;
   height: auto;
+}
+
+
+/* =========================================================
+   General MOBILE improvements
+   ========================================================= */
+
+@media (max-width: 620px) {
+
+  /*
+     Give the content more horizontal room on small phones.
+     Especially important for the alternating timeline.
+  */
+  .section {
+    padding: 1.5rem 0.75rem;
+  }
+
+  .panel {
+    padding: 2rem 1rem;
+    border-radius: 24px;
+  }
+
+  /*
+     FAQ questions get more usable text width.
+  */
+  .faq-question {
+    padding: 1rem 2.5rem 1rem 1rem;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .faq-question::after {
+    right: 1rem;
+  }
+
+  .faq-answer {
+    padding: 0 1rem;
+  }
+
+  .faq-answer p {
+    font-size: 0.95rem;
+    line-height: 1.55;
+  }
+
+  .faq-item.is-open .faq-answer {
+    max-height: 3000px;
+  }
+
+  /*
+     Slightly smaller cards on mobile.
+  */
+  .detail-card {
+    padding: 1.4rem 1rem;
+  }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .section {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .panel {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .timeline-item {
+    grid-template-columns:
+      minmax(0, 1fr)
+      16px
+      minmax(0, 1fr);
+
+    column-gap: 0.4rem;
+  }
+
+  .timeline-time {
+    font-size: 0.6rem;
+  }
+
+  .timeline-label {
+    font-size: 0.92rem;
+  }
+
+  .timeline-text {
+    font-size: 0.8rem;
+    line-height: 1.35;
+  }
+
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+  }
 }
